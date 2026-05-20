@@ -3,9 +3,9 @@ import { readFile } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { successResponse } from '@/utils/response.js';
-import { ERROR_CODES } from '@/types/error-constants.js';
 import { AppError } from '@/api/middlewares/error.js';
 import {
+  ERROR_CODES,
   DocTypeSchema,
   SdkFeatureSchema,
   SdkLanguageSchema,

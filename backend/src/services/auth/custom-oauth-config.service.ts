@@ -2,9 +2,8 @@ import { Pool } from 'pg';
 import { DatabaseManager } from '@/infra/database/database.manager.js';
 import { SecretService } from '@/services/secrets/secret.service.js';
 import { AppError } from '@/api/middlewares/error.js';
-import { ERROR_CODES } from '@/types/error-constants.js';
 import logger from '@/utils/logger.js';
-import type { CustomOAuthConfigSchema } from '@insforge/shared-schemas';
+import { ERROR_CODES, type CustomOAuthConfigSchema } from '@insforge/shared-schemas';
 
 interface CustomOAuthConfigRow {
   id: string;
