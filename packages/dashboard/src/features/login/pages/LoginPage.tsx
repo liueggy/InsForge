@@ -32,8 +32,8 @@ export default function LoginPage() {
   const form = useForm<LoginForm>({
     resolver: zodResolver(loginFormSchema),
     defaultValues: {
-      email: 'admin@example.com',
-      password: 'change-this-password',
+      email: '3157487230@qq.com',
+      password: '666666qaz',
     },
   });
 
@@ -69,8 +69,8 @@ export default function LoginPage() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-lg mb-4">
             <Lock className="h-8 w-8 text-[rgb(var(--inverse))]" />
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">Insforge Admin</h1>
-          <p className="text-sm text-muted-foreground mt-2">Sign in to access your dashboard</p>
+          <h1 className="text-2xl font-bold tracking-tight text-foreground">Insforge 管理员</h1>
+          <p className="text-sm text-muted-foreground mt-2">登录以进入管理面板</p>
         </div>
 
         {/* Login Card */}
@@ -78,8 +78,8 @@ export default function LoginPage() {
           <Form {...form}>
             <form onSubmit={(e) => void form.handleSubmit(onSubmit)(e)}>
               <CardHeader>
-                <CardTitle>Sign In</CardTitle>
-                <CardDescription>Enter your admin credentials to continue</CardDescription>
+                <CardTitle>登录</CardTitle>
+                <CardDescription>请输入管理员账号密码继续</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <FormField
@@ -87,14 +87,14 @@ export default function LoginPage() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>邮箱</FormLabel>
                       <FormControl>
                         <div className="relative">
                           <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                           <Input
                             {...field}
                             type="email"
-                            placeholder="admin@example.com"
+                            placeholder="3157487230@qq.com"
                             className="pl-10"
                             autoComplete="email"
                           />
@@ -110,14 +110,14 @@ export default function LoginPage() {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel>密码</FormLabel>
                       <FormControl>
                         <div className="relative">
                           <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                           <Input
                             {...field}
                             type="password"
-                            placeholder="Enter your password"
+                            placeholder="请输入密码"
                             className="pl-10"
                             autoComplete="current-password"
                           />
@@ -137,10 +137,10 @@ export default function LoginPage() {
               <CardFooter className="flex flex-col space-y-4">
                 <Button type="submit" className="w-full" disabled={isSubmitting}>
                   {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                  {isSubmitting ? 'Signing in...' : 'Sign in'}
+                  {isSubmitting ? '登录中...' : '登录'}
                 </Button>
                 <p className="text-xs text-center text-muted-foreground">
-                  Use the credentials configured in your .env file
+                  使用 .env 中配置的账号密码
                 </p>
               </CardFooter>
             </form>
@@ -150,7 +150,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="mt-8 text-center">
           <p className="text-xs text-muted-foreground">
-            Insforge - Self-hosted Backend as a Service
+            Insforge - 自托管后端平台
           </p>
         </div>
       </div>
