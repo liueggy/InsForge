@@ -316,7 +316,7 @@ export function MetricChartCard({
               </>
             ) : (
               <div className="flex h-full w-full items-center justify-center text-[13px] text-muted-foreground">
-                {isLoading ? 'Loading…' : 'No data'}
+                {isLoading ? '加载中…' : '暂无数据'}
               </div>
             )}
           </div>
@@ -330,7 +330,7 @@ export function MetricChartCard({
         </div>
       </div>
       <div className="grid grid-cols-3 border-t border-[var(--alpha-8)]">
-        {(['AVG', 'MAX', 'LATEST'] as const).map((label, i) => {
+        {(['平均', '最大', '最新'] as const).map((label, i) => {
           const value = i === 0 ? aggregates.avg : i === 1 ? aggregates.max : aggregates.latest;
           return (
             <div

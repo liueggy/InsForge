@@ -87,10 +87,10 @@ export default function ProjectSettingsMenuDialog({
 
   const sectionTitle =
     activeTab === 'connect'
-      ? 'Connect Project'
+      ? '连接项目'
       : activeTab === 'compute'
-        ? 'Compute & Disk'
-        : 'Project Information';
+        ? '计算与磁盘'
+        : '项目信息';
   const isProjectNameDirty = projectName !== projectNameInitialValue;
   const showProjectNameActions =
     isCloud && activeTab === 'info' && (isProjectNameFocused || isProjectNameDirty);
@@ -205,10 +205,10 @@ export default function ProjectSettingsMenuDialog({
 
   const handleDeleteProject = async () => {
     const confirmed = await confirm({
-      title: 'Delete Project',
-      description: 'Are you certain you wish to remove this project? This action is irreversible.',
-      confirmText: 'Delete Project',
-      cancelText: 'Cancel',
+      title: '删除项目',
+      description: '确定要删除这个项目吗？此操作不可撤销。',
+      confirmText: '删除项目',
+      cancelText: '取消',
       destructive: true,
     });
 
@@ -362,9 +362,9 @@ export default function ProjectSettingsMenuDialog({
             setImmediateRevoke(false);
           }
         }}
-        title="Rotate API Key"
-        confirmText={immediateRevoke ? 'Revoke & Rotate' : 'Rotate Key'}
-        cancelText="Cancel"
+        title="轮换 API Key"
+        confirmText={immediateRevoke ? '撤销并轮换' : '轮换密钥'}
+        cancelText="取消"
         destructive
         isLoading={isRotatingApiKey}
         onConfirm={handleConfirmRotateApiKey}
@@ -393,7 +393,7 @@ export default function ProjectSettingsMenuDialog({
         <MenuDialogContent>
           <MenuDialogSideNav>
             <MenuDialogSideNavHeader>
-              <MenuDialogSideNavTitle>Project Settings</MenuDialogSideNavTitle>
+              <MenuDialogSideNavTitle>项目设置</MenuDialogSideNavTitle>
             </MenuDialogSideNavHeader>
             <MenuDialogNav className="gap-0 pb-2">
               <MenuDialogNavList className="gap-1">
@@ -445,12 +445,12 @@ export default function ProjectSettingsMenuDialog({
                     <>
                       <div className="flex items-start gap-6">
                         <div className="w-[200px] shrink-0">
-                          <p className="py-1.5 text-sm leading-5 text-foreground">Project Name</p>
+                          <p className="py-1.5 text-sm leading-5 text-foreground">项目名称</p>
                         </div>
                         <div className="flex min-w-0 flex-1 items-start gap-1.5">
                           <Input
                             value={
-                              canUseCloudHost && isProjectInfoLoading ? 'Loading...' : projectName
+                              canUseCloudHost && isProjectInfoLoading ? '加载中...' : projectName
                             }
                             onChange={(event) => setProjectName(event.target.value)}
                             onFocus={() => setIsProjectNameFocused(true)}
@@ -472,7 +472,7 @@ export default function ProjectSettingsMenuDialog({
 
                   <div className="flex items-start gap-6">
                     <div className="w-[200px] shrink-0">
-                      <p className="py-1.5 text-sm leading-5 text-foreground">Project URL</p>
+                      <p className="py-1.5 text-sm leading-5 text-foreground">项目 URL</p>
                     </div>
                     <div className="flex min-w-0 flex-1 items-start gap-1.5">
                       <div className={INFO_FIELD_CLASS}>
@@ -501,7 +501,7 @@ export default function ProjectSettingsMenuDialog({
                     <div className="flex min-w-0 flex-1 items-start gap-1.5">
                       <div className={cn(INFO_FIELD_CLASS, isApiKeyLoading && 'animate-pulse')}>
                         <span className="min-w-0 flex-1 truncate">
-                          {isApiKeyLoading ? 'Loading...' : maskedApiKey}
+                          {isApiKeyLoading ? '加载中...' : maskedApiKey}
                         </span>
                         {!isApiKeyLoading && apiKey && (
                           <CopyButton
@@ -520,7 +520,7 @@ export default function ProjectSettingsMenuDialog({
                         <RefreshCw
                           className={cn('mr-1.5 size-3.5', isRotatingApiKey && 'animate-spin')}
                         />
-                        {isRotatingApiKey ? 'Rotating...' : 'Rotate'}
+                        {isRotatingApiKey ? '轮换中...' : '轮换'}
                       </Button>
                     </div>
                   </div>
@@ -531,13 +531,13 @@ export default function ProjectSettingsMenuDialog({
 
                   <div className="flex items-start gap-6">
                     <div className="w-[200px] shrink-0">
-                      <p className="py-1.5 text-sm leading-5 text-foreground">Version</p>
+                      <p className="py-1.5 text-sm leading-5 text-foreground">版本</p>
                     </div>
                     <div className="flex min-w-0 flex-1 items-start gap-1.5">
                       <div className="flex min-w-0 flex-1 flex-col gap-1.5">
                         <div className={cn(INFO_FIELD_CLASS, isVersionLoading && 'animate-pulse')}>
                           <span className="truncate">
-                            {isVersionLoading ? 'Loading...' : version || 'Unknown'}
+                            {isVersionLoading ? '加载中...' : version || '未知'}
                           </span>
                         </div>
                         {latestVersion && isVersionOutdated && (
@@ -552,7 +552,7 @@ export default function ProjectSettingsMenuDialog({
                           disabled={isUpdatingVersion}
                           className="h-8 rounded px-3 text-sm font-medium"
                         >
-                          {isUpdatingVersion ? 'Upgrading...' : 'Upgrade'}
+                          {isUpdatingVersion ? '升级中...' : '升级'}
                         </Button>
                       )}
                     </div>
@@ -565,7 +565,7 @@ export default function ProjectSettingsMenuDialog({
                   {canUseCloudHost && (
                     <div className="flex items-start gap-6">
                       <div className="w-[200px] shrink-0">
-                        <p className="py-1.5 text-sm leading-5 text-foreground">Delete Project</p>
+                        <p className="py-1.5 text-sm leading-5 text-foreground">删除项目</p>
                       </div>
                       <div className="flex min-w-0 flex-1 items-start justify-end gap-1.5">
                         <Button
@@ -650,7 +650,7 @@ export default function ProjectSettingsMenuDialog({
                 <div className="flex w-full flex-col gap-4">
                   {!instanceInfo ? (
                     <div className={cn(INFO_FIELD_CLASS, 'justify-between')}>
-                      <span className="text-muted-foreground">Loading compute options...</span>
+                      <span className="text-muted-foreground">正在加载计算配置...</span>
                     </div>
                   ) : (
                     <>
@@ -703,7 +703,7 @@ export default function ProjectSettingsMenuDialog({
                                   {instanceType.id}
                                 </span>
                                 {isCurrent ? (
-                                  <span className="text-xs text-muted-foreground">Current</span>
+                                  <span className="text-xs text-muted-foreground">当前</span>
                                 ) : (
                                   <span className="text-xs text-muted-foreground">
                                     ${instanceType.pricePerHour.toFixed(4)} / hour
@@ -780,7 +780,7 @@ export default function ProjectSettingsMenuDialog({
                   disabled={isChangingInstanceType}
                   className="h-8 rounded px-3 text-sm font-medium"
                 >
-                  {isChangingInstanceType ? 'Applying...' : 'Apply Changes'}
+                  {isChangingInstanceType ? '应用中...' : '应用更改'}
                 </Button>
               </MenuDialogFooter>
             )}

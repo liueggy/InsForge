@@ -38,86 +38,86 @@ export interface DashboardPrimaryMenuItem {
 export const dashboardStaticMenuItems: DashboardPrimaryMenuItem[] = [
   {
     id: 'dashboard',
-    label: 'Dashboard',
+    label: '仪表盘',
     href: '/dashboard',
     icon: Home,
   },
   {
     id: 'authentication',
-    label: 'Authentication',
+    label: '身份认证',
     href: '/dashboard/authentication',
     icon: Lock,
     secondaryMenu: [
       {
         id: 'users-list',
-        label: 'Users',
+        label: '用户',
         href: '/dashboard/authentication/users',
       },
       {
         id: 'auth-methods',
-        label: 'Auth Methods',
+        label: '认证方式',
         href: '/dashboard/authentication/auth-methods',
       },
       {
         id: 'email',
-        label: 'Email',
+        label: '邮件',
         href: '/dashboard/authentication/email',
       },
     ],
   },
   {
     id: 'database',
-    label: 'Database',
+    label: '数据库',
     href: '/dashboard/database',
     icon: Database,
   },
   {
     id: 'storage',
-    label: 'Storage',
+    label: '存储',
     href: '/dashboard/storage',
     icon: HardDrive,
     sectionEnd: true,
   },
   {
     id: 'sql-editor',
-    label: 'SQL Editor',
+    label: 'SQL 编辑器',
     href: '/dashboard/sql-editor',
     icon: SquarePen,
   },
   {
     id: 'functions',
-    label: 'Functions',
+    label: '函数',
     href: '/dashboard/functions',
     icon: Code2,
   },
   {
     id: 'realtime',
-    label: 'Realtime',
+    label: '实时通信',
     href: '/dashboard/realtime',
     icon: Radio,
   },
   {
     id: 'ai',
-    label: 'Model Gateway',
+    label: '模型网关',
     href: '/dashboard/ai/overview',
     icon: Sparkles,
   },
   {
     id: 'compute',
-    label: 'Compute',
+    label: '计算',
     href: '/dashboard/compute',
     icon: Server,
   },
   {
     id: 'payments',
-    label: 'Payments',
+    label: '支付',
     href: '/dashboard/payments',
     icon: CreditCard,
     sectionEnd: true,
   },
   {
     id: 'logs',
-    label: 'Logs',
+    label: '日志',
     href: '/dashboard/logs',
     icon: ChartLine,
   },
@@ -125,21 +125,21 @@ export const dashboardStaticMenuItems: DashboardPrimaryMenuItem[] = [
 
 export const dashboardSettingsMenuItem: DashboardPrimaryMenuItem = {
   id: 'settings',
-  label: 'Settings',
+  label: '设置',
   href: '',
   icon: Settings,
 };
 
 export const dashboardDeploymentsMenuItem: DashboardPrimaryMenuItem = {
   id: 'deployments',
-  label: 'Deployments',
+  label: '部署',
   href: '/dashboard/deployments',
   icon: Rocket,
 };
 
 export const dashboardAnalyticsMenuItem: DashboardPrimaryMenuItem = {
   id: 'analytics',
-  label: 'Analytics',
+  label: '分析',
   href: '/dashboard/analytics',
   icon: BarChart3,
 };
@@ -147,7 +147,7 @@ export const dashboardAnalyticsMenuItem: DashboardPrimaryMenuItem = {
 // d_test + cloud-hosting only: navigates to the Install InsForge route.
 export const dashboardDTestInstallMenuItem: DashboardPrimaryMenuItem = {
   id: 'dtest-install',
-  label: 'Install',
+  label: '安装',
   href: '/dashboard/install',
   icon: Download,
 };
@@ -155,7 +155,7 @@ export const dashboardDTestInstallMenuItem: DashboardPrimaryMenuItem = {
 // d_test + cloud-hosting only: opens the docs site in a new tab.
 export const dashboardDTestDocMenuItem: DashboardPrimaryMenuItem = {
   id: 'dtest-doc',
-  label: 'Doc',
+  label: '文档',
   href: 'https://docs.insforge.dev/introduction',
   icon: BookOpen,
   external: true,

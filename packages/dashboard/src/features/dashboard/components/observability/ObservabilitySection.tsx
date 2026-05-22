@@ -49,27 +49,27 @@ const BYTES_SIZE = (value: number) => {
 const METRICS: MetricConfig[] = [
   {
     metric: 'cpu_usage',
-    title: 'CPU Usage',
+    title: 'CPU 使用率',
     icon: <Cpu className="h-5 w-5" />,
     format: PERCENT,
     threshold: 60,
   },
   {
     metric: 'memory_usage',
-    title: 'Memory Usage',
+    title: '内存使用率',
     icon: <MemoryStick className="h-5 w-5" />,
     format: PERCENT,
     threshold: 85,
   },
   {
     metric: 'network_in',
-    title: 'Network In',
+    title: '网络入站',
     icon: <ArrowDownToLine className="h-5 w-5" />,
     format: BYTES_PER_SEC,
   },
   {
     metric: 'network_out',
-    title: 'Network Out',
+    title: '网络出站',
     icon: <ArrowUpFromLine className="h-5 w-5" />,
     format: BYTES_PER_SEC,
   },
@@ -102,10 +102,10 @@ export function ObservabilitySection() {
   return (
     <section className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-medium leading-7 text-foreground">Observability</h2>
+        <h2 className="text-xl font-medium leading-7 text-foreground">可观测性</h2>
         <div
           role="group"
-          aria-label="Time range"
+          aria-label="时间范围"
           className="flex items-center overflow-hidden rounded border border-[var(--alpha-8)] bg-[var(--alpha-4)]"
         >
           {RANGES.map((value) => (
@@ -158,7 +158,7 @@ export function ObservabilitySection() {
               0,
               <MetricChartCard
                 key="disk_used"
-                title="Disk Usage"
+                title="磁盘使用率"
                 icon={<HardDrive className="h-5 w-5" />}
                 data={diskCardProps.data}
                 rangeSeconds={RANGE_SECONDS[range]}

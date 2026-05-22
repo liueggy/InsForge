@@ -139,7 +139,7 @@ export default function AppHeader() {
             className="gap-1 rounded-[14px] border-[var(--alpha-8)] px-2 [&_svg]:size-4"
           >
             <Plug aria-hidden="true" />
-            <span>Connect</span>
+            <span>连接</span>
           </Button>
 
           {/* User Profile*/}
@@ -159,10 +159,10 @@ export default function AppHeader() {
                 </Avatar>
                 <div className="text-left hidden md:block">
                   <p className="text-sm font-medium text-zinc-950 dark:text-zinc-100 leading-tight">
-                    Admin
+                    管理员
                   </p>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                    {user?.email || 'Administrator'}
+                    {user?.email || '管理员'}
                   </p>
                 </div>
                 <ChevronDown className="h-5 w-5 text-black dark:text-white hidden md:block ml-auto" />
@@ -174,7 +174,7 @@ export default function AppHeader() {
                 className="cursor-pointer text-red-600 dark:text-red-400"
               >
                 <LogOut className="mr-2 h-4 w-4" />
-                <span>Sign Out</span>
+                <span>退出登录</span>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

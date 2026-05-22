@@ -85,7 +85,7 @@ function AgentConnectorNode({ data }: NodeProps<AgentConnectorNodeType>) {
       type="button"
       onClick={data.onOpenConnect}
       className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--alpha-8)] bg-card transition-colors hover:bg-[var(--alpha-4)]"
-      aria-label="Connect agent"
+      aria-label="连接智能体"
     >
       <Plug className="h-5 w-5 text-muted-foreground" />
     </button>
@@ -93,7 +93,7 @@ function AgentConnectorNode({ data }: NodeProps<AgentConnectorNodeType>) {
 }
 
 function AgentCardNode({ data }: NodeProps<AgentCardNodeType>) {
-  const requestLabel = `${data.requestCount} MCP Call${data.requestCount === 1 ? '' : 's'}`;
+  const requestLabel = `${data.requestCount} 次 MCP 调用`;
 
   return (
     <div className="w-[240px] overflow-hidden rounded-lg border border-[var(--alpha-8)] bg-card shadow-[0px_4px_4px_rgba(0,0,0,0.08)]">
@@ -111,7 +111,7 @@ function AgentCardNode({ data }: NodeProps<AgentCardNodeType>) {
         </div>
 
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-medium leading-5 text-foreground">Agent</p>
+          <p className="truncate text-sm font-medium leading-5 text-foreground">智能体</p>
           <p className="truncate text-[13px] leading-[18px] text-muted-foreground">
             {requestLabel}
           </p>
@@ -120,14 +120,14 @@ function AgentCardNode({ data }: NodeProps<AgentCardNodeType>) {
 
       <div className="flex items-center gap-1.5 px-3 py-3">
         <div className="h-2 w-2 rounded-full bg-primary" />
-        <p className="text-sm leading-5 text-primary">Connected</p>
+        <p className="text-sm leading-5 text-primary">已连接</p>
       </div>
     </div>
   );
 }
 
 function DatabasePreviewNode({ data }: NodeProps<DatabasePreviewNodeType>) {
-  const tableLabel = `${data.tableCount} ${data.tableCount === 1 ? 'table' : 'tables'} created`;
+  const tableLabel = `已创建 ${data.tableCount} 张表`;
   const flagUrl = getFlagUrlByRegion(data.region);
   const hasRegionRow = data.showRegion && !!data.region;
 
@@ -149,7 +149,7 @@ function DatabasePreviewNode({ data }: NodeProps<DatabasePreviewNodeType>) {
         </div>
 
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-medium leading-5 text-foreground">Database</p>
+          <p className="truncate text-sm font-medium leading-5 text-foreground">数据库</p>
           <p className="truncate text-[13px] leading-[18px] text-muted-foreground">{tableLabel}</p>
         </div>
 
@@ -159,7 +159,7 @@ function DatabasePreviewNode({ data }: NodeProps<DatabasePreviewNodeType>) {
           size="icon-sm"
           onClick={data.onOpenDatabase}
           className="size-5 rounded text-muted-foreground hover:text-foreground"
-          aria-label="Open database tables"
+          aria-label="打开数据库表"
         >
           <ExternalLink className="h-4 w-4" />
         </Button>
@@ -199,7 +199,7 @@ function VisualizerControls() {
           size="icon-sm"
           onClick={() => void zoomIn()}
           className="h-7 w-7 rounded-none border-b border-[var(--alpha-8)] text-muted-foreground hover:bg-[var(--alpha-4)] hover:text-foreground"
-          aria-label="Zoom in"
+          aria-label="放大"
         >
           <Plus className="h-4 w-4" />
         </Button>
@@ -209,7 +209,7 @@ function VisualizerControls() {
           size="icon-sm"
           onClick={() => void zoomOut()}
           className="h-7 w-7 rounded-none border-b border-[var(--alpha-8)] text-muted-foreground hover:bg-[var(--alpha-4)] hover:text-foreground"
-          aria-label="Zoom out"
+          aria-label="缩小"
         >
           <Minus className="h-4 w-4" />
         </Button>
@@ -219,7 +219,7 @@ function VisualizerControls() {
           size="icon-sm"
           onClick={() => void fitView({ ...PREVIEW_FIT_VIEW_OPTIONS, duration: 250 })}
           className="h-7 w-7 rounded-none text-muted-foreground hover:bg-[var(--alpha-4)] hover:text-foreground"
-          aria-label="Fit view"
+          aria-label="适应视图"
         >
           <Scan className="h-4 w-4" />
         </Button>
