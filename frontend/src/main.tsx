@@ -4,6 +4,9 @@ import './styles.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
+import { installZhCNRuntimeTranslator } from './i18n/zhCNRuntimeTranslator';
+
+installZhCNRuntimeTranslator();
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
